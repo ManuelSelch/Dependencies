@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Dependencies",
+    platforms: [.iOS(.v14), .macOS(.v13), .macCatalyst(.v17)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -19,5 +20,7 @@ let package = Package(
         .testTarget(
             name: "DependenciesTests",
             dependencies: ["Dependencies"]),
-    ]
+    ],
+    
+    swiftLanguageVersions: [.version("6"), .v5]
 )
